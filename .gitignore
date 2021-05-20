@@ -1,0 +1,3 @@
+./www_root/src/vendor
+./www_root/src/composer.lock
+./www_root/src/logs/*
