@@ -1,0 +1,43 @@
+version: '3'
+services:
+    web:
+        image: nginx
+        volumes:
+            - ./.docker/conf/nginx/default.conf:/etc/nginx/conf.d/default.conf
+            - ./www_root/src/public:/var/www/html/public
+            - ./www_root/src/vendor:/var/www/html/vendor
+            - ./www_root/src/app:/var/www/html/app
+            - ./www_root/src/logs:/var/www/html/logs
+        ports:
+            - 9090:80
+        restart: always
+        depends_on:
+            - php
+            - db
+    php:
+        build: .docker
+        restart: always
+        volumes:
+            - ./.docker/conf/php/php.ini:/usr/local/etc/php/conf.d/php.ini
+            - ./www_root/src/public:/var/www/html/public
+            - ./www_root/src/vendor:/var/www/html/vendor
+            - ./www_root/src/app:/var/www/html/app
+    composer:
+        image: composer
+        volumes:
+            - ./www_root/src:/app
+        command: install --ignore-platform-reqs
+    db:
+        image: postgres:10.1
+        restart: always
+        ports:
+            - 5433:5432
+        volumes:
+            - ./.docker/conf/postgres/1-base.sql:/docker-entrypoint-initdb.d/1-base.sql
+        env_file: 
+            - .env
+        healthcheck:
+            test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
+            interval: 10s
+            timeout: 10s
+            retries: 2

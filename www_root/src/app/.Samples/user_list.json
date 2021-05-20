@@ -1,0 +1,10 @@
+{
+	"data": [
+		{
+			"sort": [
+				"name", "email::desc", "dateofbirth::desc", "isactive::asc"
+			],
+			"getdeleted": false
+		}
+	]
+}

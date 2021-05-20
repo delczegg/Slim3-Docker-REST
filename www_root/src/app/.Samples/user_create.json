@@ -1,0 +1,35 @@
+{
+	"data": [
+		{
+			"name": "John Doe",
+			"email": "john.doe@example.com",
+			"dateofbirth": "1980-01-01",
+			"default_phone": "+36-30-1234-567",
+			"isactive": true
+		},{
+			"name": "Jane Smith",
+			"email": "jane.smith@example.com",
+			"dateofbirth": "1985-02-02",
+			"default_phone": "+36-30-1234-567",
+			"isactive": true
+		},{
+			"name": "Alpha Jack",
+			"email": "jack.alpha@example.com",
+			"dateofbirth": "1979-03-02",
+			"default_phone": "+36-20-1234-567",
+			"isactive": true
+		},{
+			"name": "Beta James",
+			"email": "james.beta@example.com",
+			"dateofbirth": "1989-02-22",
+			"default_phone": "+36-70-1234-567",
+			"isactive": true
+		},{
+			"name": "Sophie McMillan",
+			"email": "sophie.mm@example.com",
+			"dateofbirth": "1977-05-22",
+			"default_phone": "+36-70-5555-567",
+			"isactive": true
+		}
+	]
+}
