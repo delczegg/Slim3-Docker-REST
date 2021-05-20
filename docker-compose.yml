@@ -2,6 +2,7 @@ version: '3'
 services:
     web:
         image: nginx
+        container_name: bigfish_web_1
         volumes:
             - ./.docker/conf/nginx/default.conf:/etc/nginx/conf.d/default.conf
             - ./www_root/src/public:/var/www/html/public
@@ -16,6 +17,7 @@ services:
             - db
     php:
         build: .docker
+        container_name: bigfish_php_1
         restart: always
         volumes:
             - ./.docker/conf/php/php.ini:/usr/local/etc/php/conf.d/php.ini
@@ -24,11 +26,13 @@ services:
             - ./www_root/src/app:/var/www/html/app
     composer:
         image: composer
+        container_name: bigfish_composer_1
         volumes:
             - ./www_root/src:/app
         command: install --ignore-platform-reqs
     db:
         image: postgres:10.1
+        container_name: bigfish_db_1
         restart: always
         ports:
             - 5433:5432
