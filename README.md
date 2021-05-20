@@ -53,9 +53,9 @@ Change PHP configuration if needed: `.docker/conf/php/php.ini`.
 
 ### Create User(s)
 
-API URL: http://127.0.0.1:9090/users/create
-Method: POST
-Sample JSON: ./app/.Samples/user_create.json
+* API URL: http://127.0.0.1:9090/users/create
+* Method: POST
+* Sample JSON: ./app/.Samples/user_create.json
 
 Mandatory fields:
 	
@@ -67,9 +67,9 @@ Mandatory fields:
 
 ### Update User(s)
 
-API URL: http://127.0.0.1:9090/users
-Method: PATCH
-Sample JSON: ./app/.Samples/user_update.json
+* API URL: http://127.0.0.1:9090/users
+* Method: PATCH
+* Sample JSON: ./app/.Samples/user_update.json
 
 Mandatory field:
 
@@ -86,9 +86,9 @@ Optional (one of):
 
 ### Delete User(s)
 
-API URL: http://127.0.0.1:9090/users
-Method: DELETE
-Sample JSON: ./app/.Samples/user_delete.json
+* API URL: http://127.0.0.1:9090/users
+* Method: DELETE
+* Sample JSON: ./app/.Samples/user_delete.json
 
 Mandatory field:
 
@@ -97,9 +97,9 @@ Mandatory field:
 
 ### List User(s)
 
-API URL: http://127.0.0.1:9090/users[/{id}]
-Method: GET, POST
-Sample JSON: ./app/.Samples/user_list.json
+* API URL: http://127.0.0.1:9090/users[/{id}]
+* Method: GET, POST
+* Sample JSON: ./app/.Samples/user_list.json
 
 For GET method, url parameter (id) is optional for specified user data query. 
 When POST (sorting parameters), don't use the url parameter.
@@ -115,14 +115,14 @@ POST params example:
 ### Create/Update Phones
 
 ** Create
-API URL: http://127.0.0.1:9090/phones/create
-Method: POST
-Sample JSON: ./app/.Samples/phone_create_update.json
+* API URL: http://127.0.0.1:9090/phones/create
+* Method: POST
+* Sample JSON: ./app/.Samples/phone_create_update.json
 
 ** Update
-API URL: http://127.0.0.1:9090/phones
-Method: PATCH
-Sample JSON: ./app/.Samples/phone_create_update.json
+* API URL: http://127.0.0.1:9090/phones
+* Method: PATCH
+* Sample JSON: ./app/.Samples/phone_create_update.json
 
 Mandatory fields:
 
@@ -132,9 +132,9 @@ Mandatory fields:
 
 ### Delete Phones
 
-API URL: http://127.0.0.1:9090/phones
-Method: DELETE
-Sample JSON: ./app/.Samples/phone_delete.json
+* API URL: http://127.0.0.1:9090/phones
+* Method: DELETE
+* Sample JSON: ./app/.Samples/phone_delete.json
 
 Mandatory fields:
 
@@ -147,8 +147,8 @@ WARNING: default phonenumber not allowed for delete!
 
 ### List Phones
 
-API URL: http://127.0.0.1:9090/phones[/{user_id}]
-Method: GET
+* API URL: http://127.0.0.1:9090/phones[/{user_id}]
+* Method: GET
 
 When declared user_id url parameter, the result contains only for selected user phonenumbers collection.
 
