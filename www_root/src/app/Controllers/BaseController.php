@@ -3,14 +3,15 @@ namespace App\Controllers;
 
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
+use App\Config\Config as Config;
 
 
 class BaseController {
     private $logger;
 
     /// DI via constructor
-    public function __construct($depLogger) {
-        $this->logger = $depLogger;
+    public function __construct($Logger) {
+        $this->logger = $Logger;
     }
     
 
@@ -20,11 +21,7 @@ class BaseController {
         $this->logger->info('CALLED ENDPOINT /');
         return $response->withJson([
                 'success' => true,
-                '_metadata' => [
-                    'name' => 'BF RestAPI Test',
-                    'version' => 'v1.0',
-                    'endpoint' => '/'
-                ],
+                '_metadata' => Config::metadata($request->getUri()->getPath()),
                 'result' => [
                     "Default Page :: Index"
                 ],

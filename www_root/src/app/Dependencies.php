@@ -73,10 +73,7 @@ class Dependencies {
             return function($request, $response) use ($c) {
                 return $c['response']->withJson([
                     'success' => false,
-                    '_metadata' => [
-                        'name' => Config::APP_NAME,
-                        'version' => Config::APP_VERSION
-                    ],
+                    '_metadata' => Config::metadata($request->getUri()->getPath()),
                     'result' => [], 
                     'errors' => [
                         "Resource not found" => $request->getUri()->getPath()
@@ -89,10 +86,7 @@ class Dependencies {
             return function($request, $response) use ($c) {
                 return $c['response']->withJson([
                     'success' => false,
-                    '_metadata' => [
-                        'name' => Config::APP_NAME,
-                        'version' => Config::APP_VERSION
-                    ],
+                    '_metadata' => Config::metadata($request->getUri()->getPath()),
                     'result' => [], 
                     'errors' => [
                         "Method not allowed" => $request->getMethod(), 

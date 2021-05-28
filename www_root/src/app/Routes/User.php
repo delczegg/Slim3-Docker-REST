@@ -1,6 +1,10 @@
 <?php
 namespace App\Routes;
 
+/**
+ * Routing definitions for /users endpoint
+ * **/
+
 class User {
     function __construct($app) {
 

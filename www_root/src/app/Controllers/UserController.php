@@ -79,11 +79,7 @@ class UserController {
 
         return $response->withJson([
             'success' => true,
-            '_metadata' => [
-                'name' => Config::APP_NAME,
-                'version' => Config::APP_VERSION,
-                'endpoint' => '/users'
-            ],
+            '_metadata' => Config::metadata($request->getUri()->getPath()),
             'result' => $result, 
             'errors' => $errors
         ], 200);
@@ -163,11 +159,7 @@ class UserController {
 
         return $response->withJson([
             'success' => true,
-            '_metadata' => [
-                'name' => Config::APP_NAME,
-                'version' => Config::APP_VERSION,
-                'endpoint' => '/users'
-            ],
+            '_metadata' => Config::metadata($request->getUri()->getPath()),
             'result' => $result, 
             'errors' => $errors
         ], 200);
@@ -200,11 +192,7 @@ class UserController {
 
         return $response->withJson([
             'success' => true,
-            '_metadata' => [
-                'name' => Config::APP_NAME,
-                'version' => Config::APP_VERSION,
-                'endpoint' => '/users'
-            ],
+            '_metadata' => Config::metadata($request->getUri()->getPath()),
             'result' => $result, 
             'errors' => $errors
         ], 200);
@@ -265,11 +253,7 @@ class UserController {
 
             return $response->withJson([
                 'success' => true,
-                '_metadata' => [
-                    'name' => Config::APP_NAME,
-                    'version' => Config::APP_VERSION,
-                    'endpoint' => '/users/create'
-                ],
+                '_metadata' => Config::metadata($request->getUri()->getPath()),
                 'result' => $result,
                 'errors' => $errors
             ], 200);

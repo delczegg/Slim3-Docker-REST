@@ -1,7 +1,9 @@
 <?php 
-
 namespace App;
 
+/**
+ * App Core Class
+ * **/
 class App {
 
 	private $app;

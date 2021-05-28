@@ -1,6 +1,11 @@
 <?php
 namespace App\Routes;
 
+
+/**
+ * Routing definitions for /phones endpoint
+ * **/
+
 class Phone {
     function __construct($app) {
         $app->get('/phones[/{user_id}]', '\App\Controllers\PhoneController:list');

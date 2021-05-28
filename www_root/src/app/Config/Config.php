@@ -1,10 +1,14 @@
 <?php
 namespace App\Config;
 
+/**
+ * App configuration
+ * **/
 class Config {
 
     const APP_NAME = "BF RestAPI Test";
     const APP_VERSION = "v1.0";
+    const APP_COMPONENTS = "Nginx, PostgreSQL 10, PHP ".PHP_VERSION;
 
 
     /// .hu phone area numbers
@@ -50,6 +54,17 @@ class Config {
             ],
         ];
     }
+
+
+    public function metadata(String $endpoint = ""){
+        return [
+            'name' => self::APP_NAME,
+            'version' => self::APP_VERSION,
+            'components' => self::APP_COMPONENTS,
+            'endpoint' => $endpoint
+        ];
+    }
+
 
     // Auth setup, soon in v1.1...
     ///public function auth() {

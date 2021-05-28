@@ -34,11 +34,7 @@ class PhoneController {
 
         return $response->withJson([
             'success' => true,
-            '_metadata' => [
-                'name' => Config::APP_NAME,
-                'version' => Config::APP_VERSION,
-                'endpoint' => '/phone'
-            ],
+            '_metadata' => Config::metadata($request->getUri()->getPath()),
             'result' => $result,
             'errors' => []
         ], 200);
@@ -94,11 +90,7 @@ class PhoneController {
               
             return $response->withJson([
                 'success' => true,
-                '_metadata' => [
-                    'name' => Config::APP_NAME,
-                    'version' => Config::APP_VERSION,
-                    'endpoint' => '/phones'
-                ],
+                '_metadata' => Config::metadata($request->getUri()->getPath()),
                 'result' => $result,
                 'errors' => $errors
             ], 200);
@@ -149,11 +141,7 @@ class PhoneController {
 
             return $response->withJson([
                 'success' => true,
-                '_metadata' => [
-                    'name' => Config::APP_NAME,
-                    'version' => Config::APP_VERSION,
-                    'endpoint' => '/phones'
-                ],
+                '_metadata' => Config::metadata($request->getUri()->getPath()),
                 'result' => $result,
                 'errors' => $errors
             ], 200);
@@ -218,11 +206,7 @@ class PhoneController {
               
             return $response->withJson([
                 'success' => true,
-                '_metadata' => [
-                    'name' => Config::APP_NAME,
-                    'version' => Config::APP_VERSION,
-                    'endpoint' => '/phones/create'
-                ],
+                '_metadata' => Config::metadata($request->getUri()->getPath()),
                 'result' => $result,
                 'errors' => $errors
             ], 200);
