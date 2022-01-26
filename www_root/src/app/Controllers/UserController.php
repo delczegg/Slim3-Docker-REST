@@ -26,7 +26,7 @@ class UserController {
 
     /// GET
     /// list users
-    /// if you like Italian cuisine, you will love it! ;)
+    /// if you like Italian cuisine, you will love it! ;) (yep, spaghetti! :))
     public function list(Request $request, Response $response, $args){
         
         $this->log->info('POST /users', $args);
